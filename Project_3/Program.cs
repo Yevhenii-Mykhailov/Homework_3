@@ -101,11 +101,7 @@ namespace Project_3
             double n = default;
             double cbrtA = Math.Cbrt(a);
 
-            while (cbrtA < a)
-            {
-
-            }
-            return n;
+            return cbrtA;
         }
 
         static int GetNumberOfOddDigits(int number)
