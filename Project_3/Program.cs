@@ -96,12 +96,33 @@ namespace Project_3
         }
 
         //TODO use binary search algorithm.
-        static double GetNumberByBinaryAlgorithm(double a)
+        static double GetNumberByBinaryAlgorithm(int a)
         {
             double n = default;
-            double cbrtA = Math.Cbrt(a);
+            int min = 1;
+            double temp = a;
 
-            return cbrtA;
+            while (min <= a)
+            {
+                int mid = a / 2;
+                double key = Math.Pow(mid, 3);
+                if (key > temp)
+                {
+                    a = mid;
+                    continue;
+                }
+                else if (key == temp)
+                {
+                    n = mid;
+                    break;
+                }
+                else
+                {
+                    return n;
+                }
+            }
+
+            return n;
         }
 
         static int GetNumberOfOddDigits(int number)
@@ -152,7 +173,7 @@ namespace Project_3
 
         static void Main(string[] args)
         {
-            Console.WriteLine(GetNumberByBinaryAlgorithm(9261));
+            Console.WriteLine(GetNumberByBinaryAlgorithm(125));
         }
     }
 }
