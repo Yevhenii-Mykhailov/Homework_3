@@ -95,7 +95,6 @@ namespace Project_3
             return Math.Max(a, b);
         }
 
-        //TODO use binary search algorithm.
         static double GetNumberByBinaryAlgorithm(int a)
         {
             double n = default;
@@ -105,20 +104,21 @@ namespace Project_3
             while (min <= a)
             {
                 int mid = a / 2;
-                double key = Math.Pow(mid, 3);
+                double key = mid * mid * mid;
                 if (key > temp)
                 {
                     a = mid;
                     continue;
                 }
-                else if (key == temp)
+                else if (key < temp)
                 {
-                    n = mid;
-                    break;
+                    a +=mid;
+                    continue;
                 }
                 else
                 {
-                    return n;
+                    n = mid;
+                    break;
                 }
             }
 
@@ -151,9 +151,9 @@ namespace Project_3
             return Convert.ToInt32(result);
         }
 
-        static string VerifySameDigits(int firstNumber, int secondNumber)
+        static bool VerifySameDigits(int firstNumber, int secondNumber)
         {
-            string result = "NO";
+            bool result = false;
             string firstInput = Convert.ToString(firstNumber);
             string secondInput = Convert.ToString(secondNumber);
 
@@ -163,7 +163,7 @@ namespace Project_3
                 {
                     if (firstInput[i] == secondInput[j])
                     {
-                        result = "YES";
+                        result = true;
                         return result;
                     }
                 }
@@ -173,7 +173,7 @@ namespace Project_3
 
         static void Main(string[] args)
         {
-            Console.WriteLine(GetNumberByBinaryAlgorithm(125));
+            
         }
     }
 }
