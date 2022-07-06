@@ -112,7 +112,7 @@ namespace Project_3
                 }
                 else if (key < temp)
                 {
-                    a +=mid;
+                    ++a;
                     continue;
                 }
                 else
@@ -173,7 +173,7 @@ namespace Project_3
 
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(GetNumberByBinaryAlgorithm(8000));
         }
     }
 }
