@@ -11,4 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Framework" Version="17.2.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cycles_Library\Cycles_Library.csproj" />
+  </ItemGroup>
 </Project>
